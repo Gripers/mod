@@ -1,0 +1,16 @@
+.profile__wrapper__right_content {
+  .profile__wrapper__right__content_wrapper {
+    .profile__wrapper__right__content__wrapper_cards {
+      display: grid;
+      gap: 16px;
+      margin: 16px 0;
+    }
+  }
+
+  .profile__wrapper__right__content_nothing {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

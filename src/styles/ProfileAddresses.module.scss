@@ -1,0 +1,40 @@
+.profile__wrapper__right_content {
+  .profile__wrapper__right__content_wrapper {
+    .profile__wrapper__right__content__wrapper_cards {
+      display: grid;
+      gap: 16px;
+      margin: 16px 0;
+
+      .profile__wrapper__right__content__wrapper__cards_card {
+        display: grid;
+        gap: 10px;
+        border-bottom: 1px solid #efefef;
+        padding-bottom: 16px;
+
+        p {
+          color: #666666;
+        }
+
+        .profile__wrapper__right__content__wrapper__cards__card_flex {
+          display: flex;
+          gap: 20px;
+
+          span {
+            color: #666666;
+            font-size: x-small;
+            font-weight: 700;
+            background-color: #efefef;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .profile__wrapper__right__content_nothing {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

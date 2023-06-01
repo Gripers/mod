@@ -1,0 +1,31 @@
+.navbar__mobile {
+  padding: 20px 20px 0 20px;
+
+  a {
+    color: black;
+  }
+
+  .navbar__mobile_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navbar__mobile__top_logo {
+      padding-left: 20%;
+    }
+
+    .navbar__mobile__top_cusnavigation {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  .navbar__mobile_bottom {
+    margin: 16px 0;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

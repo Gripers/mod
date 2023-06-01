@@ -1,0 +1,21 @@
+.header {
+  background-image: url('/static/media/header.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5%;
+
+  .header__card {
+    width: fit-content;
+    text-align: end;
+    background-color: white;
+    padding: 20px;
+
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+  }
+}

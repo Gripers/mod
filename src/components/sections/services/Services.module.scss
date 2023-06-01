@@ -1,0 +1,25 @@
+.services ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .services__icon {
+      width: fit-content;
+      border-radius: 50%;
+      background-color: #1d1d1d;
+      display: flex;
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .services ul {
+    grid-template-columns: 1fr;
+  }
+}

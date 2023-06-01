@@ -1,0 +1,20 @@
+.profile__drawer_header {
+  display: flex;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 700px) {
+  .profile__drawer_header {
+    button {
+      display: none;
+    }
+
+    h2 {
+      width: unset;
+    }
+  }
+}

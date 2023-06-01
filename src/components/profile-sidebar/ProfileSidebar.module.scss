@@ -1,0 +1,13 @@
+.profile__sidebar ul {
+  display: grid;
+  gap: 16px;
+
+  li {
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 16px;
+
+    a {
+      color: black;
+    }
+  }
+}

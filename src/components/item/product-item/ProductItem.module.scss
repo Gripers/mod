@@ -1,0 +1,21 @@
+.product__item {
+  color: black;
+
+  .product__item_image {
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .product__item_content {
+    display: grid;
+    gap: 10px;
+    padding: 16px 0;
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

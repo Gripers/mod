@@ -1,0 +1,20 @@
+.filter {
+  .filter__top {
+    display: flex;
+    gap: 20px;
+
+    button {
+      font-weight: 700;
+      border-radius: 10px;
+      background-color: #f8f8f8;
+      padding: 0 20px;
+    }
+  }
+
+  .filter__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+}
