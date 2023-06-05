@@ -26,6 +26,9 @@ import {
 export const rootApi = createApi({
   reducerPath: 'root',
   // baseQuery: customBaseQuery,
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.NEXT_PUBLIC_API,
+    referrerPolicy: 'unsafe-url',
+  }),
   endpoints: () => ({}),
 });
