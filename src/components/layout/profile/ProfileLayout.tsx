@@ -23,8 +23,6 @@ const ProfileLayout = ({ children }: ProfileLayoutProps) => {
     return () => router.events.off('routeChangeComplete', handleRouteChange);
   }, [router]);
 
-  console.log(children);
-
   return (
     <section id='container' className={styles.profile}>
       <SectionLayout title='ЗДРАВСТВУЙТЕ, RIOT' />

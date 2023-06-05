@@ -49,6 +49,7 @@
     }
 
     .navbar__middle_cusnavigation {
+      position: relative;
       display: flex;
       gap: 20px;
 
@@ -56,6 +57,20 @@
         flex-direction: column;
         gap: 0;
         color: black;
+      }
+
+      .navbar__middle__cusnavigation_sup {
+        width: 17px;
+        height: 17px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #222222;
+        color: white;
+        font-size: 12px;
       }
     }
   }

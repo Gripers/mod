@@ -10,17 +10,20 @@ type ProductItemProps = { item: Product };
 
 const ProductItem = ({ item }: ProductItemProps) => {
   return (
-    <Link href={`/products/${item.id}`} className={styles.product__item}>
+    <div className={styles.product__item}>
       <div className={styles.product__item_image}>
         <Image src={item.image} alt='' fill />
-        <ToFav />
+        <ToFav item={item} />
       </div>
-      <div className={styles.product__item_content}>
+      <Link
+        href={`/products/${item.id}`}
+        className={styles.product__item_content}
+      >
         <strong>{item.title}</strong>
         <span>{item.description}</span>
         <strong>{item.price} UZS</strong>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

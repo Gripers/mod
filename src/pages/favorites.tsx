@@ -3,15 +3,14 @@ import styles from '@/styles/Favorites.module.scss';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-import { sneakersDB } from '@/db/sneakers.db';
+import { useFavorites } from '@/hooks/useFavorites';
 import SectionLayout from '@/components/layout/section/SectionLayout';
 import Button from '@/components/button/Button';
 import ProductItem from '@/components/item/product-item/ProductItem';
 
-const items = sneakersDB;
-
 const FavoritesPage = () => {
   const { push } = useRouter();
+  const { favorites: items } = useFavorites();
 
   return (
     <section id='container' className={styles.favorites}>

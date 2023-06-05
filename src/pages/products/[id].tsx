@@ -4,11 +4,13 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 import { sneakersDB } from '@/db/sneakers.db';
+import { useCart } from '@/hooks/useCart';
 import GoBack from '@/components/goback/GoBack';
 import ToFav from '@/components/tofav/ToFav';
 
 const SingleProductPage = () => {
   const { query } = useRouter();
+  const { addItem, removeItem, getItem } = useCart();
 
   const item = sneakersDB.find((i) => i.id === Number(query.id));
 
@@ -18,13 +20,19 @@ const SingleProductPage = () => {
       <div className={styles.single__product_wrapper}>
         <div className={styles.single__product__wrapper_left}>
           <Image src={item?.image!} alt='' fill />
-          <ToFav />
+          <ToFav item={item!} />
         </div>
         <div className={styles.single__product__wrapper_right}>
           <p>{item?.title}</p>
           <h2>{item?.description}</h2>
           <h2>{item?.price} UZS</h2>
-          <button>ДОБАВИТЬ В КОРЗИНУ</button>
+          {!getItem(item?.id!) ? (
+            <button onClick={() => addItem(item)}>ДОБАВИТЬ В КОРЗИНУ</button>
+          ) : (
+            <button onClick={() => removeItem(item?.id)}>
+              УБРАТЬ ИЗ КОРЗИНЫ
+            </button>
+          )}
           <hr />
           <ul>
             <li>

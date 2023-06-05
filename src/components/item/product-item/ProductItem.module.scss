@@ -1,6 +1,4 @@
 .product__item {
-  color: black;
-
   .product__item_image {
     position: relative;
     max-height: 300px;
@@ -8,6 +6,7 @@
   }
 
   .product__item_content {
+    color: black;
     display: grid;
     gap: 10px;
     padding: 16px 0;
@@ -16,6 +15,10 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+
+    strong:first-child {
+      text-decoration: underline;
     }
   }
 }

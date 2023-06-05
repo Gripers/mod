@@ -3,7 +3,7 @@ import styles from './CatalogItem.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Category } from '@/types/Category.type';
+import { Category } from '@/types/category.type';
 
 type CatalogItemProps = { item: Category };
 

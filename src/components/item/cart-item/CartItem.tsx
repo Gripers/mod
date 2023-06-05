@@ -3,10 +3,28 @@ import styles from './CartItem.module.scss';
 import Image from 'next/image';
 
 import { Product } from '@/types/product.type';
+import { useCart } from '@/hooks/useCart';
 
 type CartItemProps = { item: Product };
 
 const CartItem = ({ item }: CartItemProps) => {
+  const { updateItemQuantity, removeItem } = useCart();
+
+  const increment = () =>
+    updateItemQuantity({
+      id: item.id,
+      quantity: item.quantity! + 1,
+    });
+
+  const decrement = () => {
+    if (item.quantity! <= 1) removeItem(item.id);
+
+    updateItemQuantity({
+      id: item.id,
+      quantity: item.quantity! - 1,
+    });
+  };
+
   return (
     <div className={styles.cart__item}>
       <div className={styles.cart__item_image}>
@@ -18,9 +36,9 @@ const CartItem = ({ item }: CartItemProps) => {
         <div className={styles.cart__item__content_flx}>
           <strong>{item.price} UZS</strong>
           <div className={styles.cart__item__content__flx_quantity}>
-            <button>+</button>
+            <button onClick={increment}>+</button>
             <span>{item.quantity}</span>
-            <button>-</button>
+            <button onClick={decrement}>-</button>
           </div>
         </div>
       </div>

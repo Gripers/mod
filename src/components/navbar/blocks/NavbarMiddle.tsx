@@ -1,20 +1,22 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { useCart } from '@/hooks/useCart';
+import { useGetGendersQuery } from '@/store/api/home.api';
+
 const NavbarMiddle = ({ styles }: any) => {
+  const { totalItems } = useCart();
+  const { data } = useGetGendersQuery('');
+
   return (
     <div className={styles.navbar__middle}>
       <nav>
         <ul>
-          <li>
-            <Link href='/women'>ЖЕНЩИНАМ</Link>
-          </li>
-          <li>
-            <Link href='/men'>МУЖЧИНАМ</Link>
-          </li>
-          <li>
-            <Link href='/kids'>ДЕТЯМ</Link>
-          </li>
+          {data?.map((gender) => (
+            <li key={gender.id}>
+              <Link href={gender.slug}>{gender.name}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <div className={styles.navbar__middle_logo}>
@@ -30,6 +32,9 @@ const NavbarMiddle = ({ styles }: any) => {
         <Link href='/cart'>
           <Image src='/static/media/bag.svg' alt='' width={16} height={16} />
           <span>Корзина</span>
+          <span className={styles.navbar__middle__cusnavigation_sup}>
+            {totalItems}
+          </span>
         </Link>
       </div>
     </div>

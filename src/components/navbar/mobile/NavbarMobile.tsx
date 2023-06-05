@@ -1,15 +1,21 @@
+import { useState } from 'react';
 import styles from './NavbarMobile.module.scss';
 
 import Link from 'next/link';
 import Image from 'next/image';
 
+import MainDrawer from '@/components/drawer/main/MainDrawer';
+
 const NavbarMobile = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className={styles.navbar__mobile}>
       <div className={styles.navbar__mobile_top}>
-        <button>
+        <button onClick={() => setOpen(true)}>
           <Image src='/static/media/bars.svg' alt='' width={16} height={16} />
         </button>
+        <MainDrawer open={open} setOpen={setOpen} />
         <div className={styles.navbar__mobile__top_logo}>
           <Link href='/'>
             <h1>MOD</h1>
