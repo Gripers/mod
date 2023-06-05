@@ -14,6 +14,8 @@ const css = `
 `;
 
 export default function HomePage() {
+  console.log(process.env.NEXT_PUBLIC_API);
+
   return (
     <>
       <Header />
