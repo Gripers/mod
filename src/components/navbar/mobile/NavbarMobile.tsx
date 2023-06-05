@@ -4,10 +4,12 @@ import styles from './NavbarMobile.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { useGetGendersQuery } from '@/store/api/home.api';
 import MainDrawer from '@/components/drawer/main/MainDrawer';
 
 const NavbarMobile = () => {
   const [open, setOpen] = useState(false);
+  const { data, isLoading } = useGetGendersQuery('');
 
   return (
     <div className={styles.navbar__mobile}>
@@ -44,20 +46,17 @@ const NavbarMobile = () => {
         </div>
       </div>
       <nav className={styles.navbar__mobile_bottom}>
-        <ul>
-          <li>
-            <Link href='/'>ЖЕНЩИНАМ</Link>
-          </li>
-          <li>
-            <Link href='/'>МУЖЧИНАМ</Link>
-          </li>
-          <li>
-            <Link href='/'>ДЕТЯМ</Link>
-          </li>
-          {/* <li>
-            <Link href='/'>БРЕНДЫ</Link>
-          </li> */}
-        </ul>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <ul>
+            {data?.map((gender) => (
+              <li key={gender.id}>
+                <Link href={gender.slug}>{gender.name}</Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </nav>
     </div>
   );

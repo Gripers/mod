@@ -39,6 +39,10 @@
       display: flex;
       gap: 20px;
 
+      li {
+        text-transform: uppercase;
+      }
+
       li:first-child {
         list-style: none;
       }

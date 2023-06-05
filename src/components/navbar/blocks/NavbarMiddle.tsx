@@ -6,17 +6,21 @@ import { useGetGendersQuery } from '@/store/api/home.api';
 
 const NavbarMiddle = ({ styles }: any) => {
   const { totalItems } = useCart();
-  const { data } = useGetGendersQuery('');
+  const { data, isLoading } = useGetGendersQuery('');
 
   return (
     <div className={styles.navbar__middle}>
       <nav>
         <ul>
-          {data?.map((gender) => (
-            <li key={gender.id}>
-              <Link href={gender.slug}>{gender.name}</Link>
-            </li>
-          ))}
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            data?.map((gender) => (
+              <li key={gender.id}>
+                <Link href={gender.slug}>{gender.name}</Link>
+              </li>
+            ))
+          )}
         </ul>
       </nav>
       <div className={styles.navbar__middle_logo}>

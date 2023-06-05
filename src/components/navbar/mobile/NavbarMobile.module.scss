@@ -26,6 +26,10 @@
     ul {
       display: flex;
       justify-content: space-between;
+
+      li {
+        text-transform: uppercase;
+      }
     }
   }
 }
