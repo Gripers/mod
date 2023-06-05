@@ -11,17 +11,20 @@ const NavbarMiddle = ({ styles }: any) => {
   return (
     <div className={styles.navbar__middle}>
       <nav>
-        <ul>
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            data?.map((gender) => (
-              <li key={gender.id}>
-                <Link href={gender.slug}>{gender.name}</Link>
-              </li>
-            ))
-          )}
-        </ul>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <ul>
+            {
+              // @ts-ignore
+              data?.data.map((gender) => (
+                <li key={gender.id}>
+                  <Link href={gender.slug}>{gender.name}</Link>
+                </li>
+              ))
+            }
+          </ul>
+        )}
       </nav>
       <div className={styles.navbar__middle_logo}>
         <Link href='/'>
