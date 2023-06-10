@@ -50,14 +50,11 @@ const NavbarMobile = () => {
           <p>Loading...</p>
         ) : (
           <ul>
-            {
-              // @ts-ignore
-              data?.data.map((gender) => (
-                <li key={gender.id}>
-                  <Link href={gender.slug}>{gender.name}</Link>
-                </li>
-              ))
-            }
+            {data?.map((gender) => (
+              <li key={gender.id}>
+                <Link href={gender.slug}>{gender.name}</Link>
+              </li>
+            ))}
           </ul>
         )}
       </nav>

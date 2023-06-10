@@ -1,34 +1,38 @@
-import {
-  FetchArgs,
-  FetchBaseQueryError,
-} from '@reduxjs/toolkit/dist/query/fetchBaseQuery';
-import {
-  BaseQueryFn,
-  createApi,
-  fetchBaseQuery,
-} from '@reduxjs/toolkit/query/react';
+import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
+import axios from 'axios';
 
-// const baseQuery = fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API });
-// const customBaseQuery: BaseQueryFn<
-//   string | FetchArgs,
-//   unknown,
-//   FetchBaseQueryError
-// > = async (args, api, extraOptions) => {
-//   const result = await baseQuery(args, api, extraOptions);
+import type { AxiosRequestConfig, AxiosError } from 'axios';
 
-//   return {
-//     // @ts-ignore
-//     data: result.data?.data,
-//     meta: result.meta,
-//   };
-// };
+const customBaseQuery =
+  (
+    { baseUrl }: { baseUrl: string } = { baseUrl: '' }
+  ): BaseQueryFn<
+    {
+      url: string;
+      method: AxiosRequestConfig['method'];
+      data?: AxiosRequestConfig['data'];
+      params?: AxiosRequestConfig['params'];
+    },
+    unknown,
+    unknown
+  > =>
+  async ({ url, method, data, params }) => {
+    try {
+      const result = await axios({ url: baseUrl + url, method, data, params });
+      return { data: result.data.data };
+    } catch (axiosError) {
+      let err = axiosError as AxiosError;
+      return {
+        error: {
+          status: err.response?.status,
+          data: err.response?.data || err.message,
+        },
+      };
+    }
+  };
 
 export const rootApi = createApi({
   reducerPath: 'root',
-  // baseQuery: customBaseQuery,
-  baseQuery: fetchBaseQuery({
-    baseUrl: process.env.NEXT_PUBLIC_API,
-    referrerPolicy: 'unsafe-url',
-  }),
+  baseQuery: customBaseQuery({ baseUrl: String(process.env.NEXT_PUBLIC_API) }),
   endpoints: () => ({}),
 });
