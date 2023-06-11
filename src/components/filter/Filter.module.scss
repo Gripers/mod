@@ -1,6 +1,7 @@
 .filter {
   .filter__top {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 
     button {
@@ -16,5 +17,15 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .filter .filter__top {
+    grid-template-columns: repeat(2, 1fr);
+
+    button {
+      padding: 10px 0;
+    }
   }
 }

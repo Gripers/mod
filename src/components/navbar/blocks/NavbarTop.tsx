@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const NavbarTop = ({ styles }: any) => {
   return (
@@ -11,12 +11,12 @@ const NavbarTop = ({ styles }: any) => {
         </Link>
       </div>
       <div>
-        <Link href='/'>
+        <Link href='/registration'>
           <Image src='/static/media/user.svg' alt='' width={16} height={16} />
           <span>Регистрация</span>
         </Link>
         <div className={styles.navbar__top_line}></div>
-        <Link href='/'>
+        <Link href='/login'>
           <Image src='/static/media/login.svg' alt='' width={16} height={16} />
           <span>Логин</span>
         </Link>

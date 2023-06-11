@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './LoginModal.module.scss';
+import styles from './RegistrationModal.module.scss';
 
 import { useForm, SubmitHandler } from 'react-hook-form';
 import Box from '@mui/material/Box';
@@ -7,19 +7,21 @@ import Modal from '@mui/material/Modal';
 import Image from 'next/image';
 
 import { modalStyles } from '@/config/modal.config';
-import { useLoginMutation } from '@/store/api/auth.api';
+import { useRegisterMutation } from '@/store/api/auth.api';
 import Button from '@/components/button/Button';
 
 type Inputs = {
   phone: string;
+  first_name: string;
+  last_name: string;
 };
 
-const LoginModal = () => {
+const RegistrationModal = () => {
   const [open, setOpen] = useState(false);
-  const [login, { isLoading }] = useLoginMutation();
-  const { register, handleSubmit } = useForm<Inputs>();
+  const [register, { isLoading }] = useRegisterMutation();
+  const { register: inputRegister, handleSubmit } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => login(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => register(data);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -27,7 +29,7 @@ const LoginModal = () => {
   return (
     <>
       <Button isDark onClick={handleOpen}>
-        ВОЙТИ
+        ЗАРЕГИСТРИРОВАТЬСЯ
       </Button>
       <Modal
         open={open}
@@ -37,7 +39,7 @@ const LoginModal = () => {
       >
         <Box sx={modalStyles}>
           <div className={styles.modal_header}>
-            <h3>ВХОД</h3>
+            <h3>РЕГИСТРАЦИЯ</h3>
             <button onClick={handleClose}>
               <Image
                 src='/static/media/close.svg'
@@ -52,14 +54,31 @@ const LoginModal = () => {
               <label htmlFor='phone'>
                 Телефон
                 <input
-                  type='string'
+                  type='text'
                   placeholder='+998 (xx) xxx xx xx'
                   id='phone'
                   required
-                  {...register('phone')}
+                  {...inputRegister('phone')}
                 />
               </label>
-              <p>На введеный вами номер придет код</p>
+              <label htmlFor='first_name'>
+                Имя
+                <input
+                  type='text'
+                  id='first_name'
+                  required
+                  {...inputRegister('first_name')}
+                />
+              </label>
+              <label htmlFor='last_name'>
+                Фамилия
+                <input
+                  type='text'
+                  id='last_name'
+                  required
+                  {...inputRegister('last_name')}
+                />
+              </label>
               <Button isDark type='submit' withLoading={isLoading}>
                 ОТПРАВИТЬ
               </Button>
@@ -71,4 +90,4 @@ const LoginModal = () => {
   );
 };
 
-export default LoginModal;
+export default RegistrationModal;

@@ -1,19 +1,22 @@
 import styles from './Button.module.scss';
 
+import Spinner from '../spinner/Spinner';
+
 type ButtonProps = {
   isDark?: boolean;
+  withLoading?: boolean;
   children: string;
   [x: string]: any;
 };
 
-const Button = ({ isDark, children, ...rest }: ButtonProps) => {
+const Button = ({ isDark, withLoading, children, ...rest }: ButtonProps) => {
   return isDark ? (
     <button className={styles.button__dark} {...rest}>
-      {children}
+      {withLoading ? <Spinner /> : children}
     </button>
   ) : (
     <button className={styles.button} {...rest}>
-      {children}
+      {withLoading ? <Spinner /> : children}
     </button>
   );
 };

@@ -3,8 +3,8 @@ import { Gender } from '@/types/gender.type';
 
 const homeApi = rootApi.injectEndpoints({
   endpoints: (build) => ({
-    getGenders: build.query<Gender[], string>({
-      query: () => ({ url: '/home', method: 'get' }),
+    getGenders: build.query<{ data: Gender[] }, string>({
+      query: () => '/home',
     }),
   }),
 });

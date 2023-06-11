@@ -15,7 +15,7 @@ const NavbarMiddle = ({ styles }: any) => {
           <p>Loading...</p>
         ) : (
           <ul>
-            {data?.map((gender) => (
+            {data?.data.map((gender) => (
               <li key={gender.id}>
                 <Link href={gender.slug}>{gender.name}</Link>
               </li>
