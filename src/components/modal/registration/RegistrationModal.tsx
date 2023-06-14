@@ -19,9 +19,10 @@ type Inputs = {
 const RegistrationModal = () => {
   const [open, setOpen] = useState(false);
   const [register, { isLoading }] = useRegisterMutation();
-  const { register: inputRegister, handleSubmit } = useForm<Inputs>();
+  const { register: inputRegister, handleSubmit, reset } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => register(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) =>
+    register(data).then(() => reset());
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

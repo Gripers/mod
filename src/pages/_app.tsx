@@ -11,22 +11,26 @@ import NextNProgress from 'nextjs-progressbar';
 import { DrawerContext } from '@/context/DrawerContext';
 import { persistor, store } from '@/store/store';
 import Layout from '@/components/layout/layout';
+import { ModalContext } from '@/context/ModalContext';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <DrawerContext.Provider value={{ open, setOpen }}>
-          <Layout>
-            <NextNProgress
-              color='black'
-              height={2}
-              options={{ showSpinner: false }}
-            />
-            <Component {...pageProps} />
-          </Layout>
+          <ModalContext.Provider value={{ confirmOpen, setConfirmOpen }}>
+            <Layout>
+              <NextNProgress
+                color='black'
+                height={2}
+                options={{ showSpinner: false }}
+              />
+              <Component {...pageProps} />
+            </Layout>
+          </ModalContext.Provider>
         </DrawerContext.Provider>
       </PersistGate>
     </Provider>

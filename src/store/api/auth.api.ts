@@ -19,7 +19,15 @@ const authApi = rootApi.injectEndpoints({
         body: payload,
       }),
     }),
+    confirm: build.mutation<null, { phone: string; code: number }>({
+      query: (payload) => ({
+        url: '/otp/confirm',
+        method: 'POST',
+        body: payload,
+      }),
+    }),
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation } = authApi;
+export const { useRegisterMutation, useLoginMutation, useConfirmMutation } =
+  authApi;

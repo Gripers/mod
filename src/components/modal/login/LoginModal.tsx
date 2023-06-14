@@ -1,28 +1,34 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styles from './LoginModal.module.scss';
 
 import { useForm, SubmitHandler } from 'react-hook-form';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
+import { Box, Modal } from '@mui/material';
 import Image from 'next/image';
 
 import { modalStyles } from '@/config/modal.config';
 import { useLoginMutation } from '@/store/api/auth.api';
+import { ModalContext } from '@/context/ModalContext';
 import Button from '@/components/button/Button';
+import ConfirmModal from '../confirm/ConfirmModal';
 
 type Inputs = {
   phone: string;
 };
 
 const LoginModal = () => {
+  const { setConfirmOpen } = useContext(ModalContext);
   const [open, setOpen] = useState(false);
-  const [login, { isLoading }] = useLoginMutation();
+  const [login, { isLoading, isSuccess }] = useLoginMutation();
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => login(data);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  if (isSuccess) {
+    setConfirmOpen(true);
+  }
 
   return (
     <>
@@ -67,6 +73,7 @@ const LoginModal = () => {
           </div>
         </Box>
       </Modal>
+      <ConfirmModal />
     </>
   );
 };
