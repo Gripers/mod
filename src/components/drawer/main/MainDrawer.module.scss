@@ -1,0 +1,45 @@
+.main__drawer {
+  font-size: 13px;
+
+  .main__drawer_header {
+    .main__drawer__header_top {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .main__drawer__header_bottom {
+      margin-top: 16px;
+
+      ul {
+        display: flex;
+        align-items: center;
+
+        li {
+          width: 100%;
+          border: 1px solid #ededed;
+          padding: 10px;
+
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .main__drawer_body {
+    .main__drawer__body_top ul {
+      display: flex;
+
+      li {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+      }
+    }
+  }
+}
