@@ -1,9 +1,9 @@
-import Header from '@/components/header/Header';
-import Banner from '@/components/sections/banner/Banner';
-import Brands from '@/components/sections/brands/Brands';
-import Catalog from '@/components/sections/catalog/Catalog';
-import Services from '@/components/sections/services/Services';
-import Sneakers from '@/components/sections/sneakers/Sneakers';
+import Header from "@/components/header/Header";
+import Banner from "@/components/sections/banner/Banner";
+import Brands from "@/components/sections/brands/Brands";
+import Catalog from "@/components/sections/catalog/Catalog";
+import Services from "@/components/sections/services/Services";
+import Sneakers from "@/components/sections/sneakers/Sneakers";
 
 const css = `
   .container section {
@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <div className='container'>
+      <div className="container">
         <style>{css}</style>
         <Catalog />
         <Brands />

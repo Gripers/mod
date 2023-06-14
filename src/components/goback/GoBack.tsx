@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 const styles = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '10px',
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
 };
 
 const GoBack = () => {
@@ -12,7 +12,7 @@ const GoBack = () => {
 
   return (
     <button onClick={back} style={styles}>
-      <Image src='/static/media/arrow.svg' alt='' width={20} height={20} />
+      <Image src="/static/media/arrow.svg" alt="" width={20} height={20} />
       <span>НАЗАД</span>
     </button>
   );

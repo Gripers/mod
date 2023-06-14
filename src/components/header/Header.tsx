@@ -1,9 +1,9 @@
-import styles from './Header.module.scss';
+import styles from "./Header.module.scss";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { useWindowSize } from '@/hooks/useWindowSize';
-import HeaderMobile from './mobile/HeaderMobile';
+import { useWindowSize } from "@/hooks/useWindowSize";
+import HeaderMobile from "./mobile/HeaderMobile";
 
 const Header = () => {
   const { width } = useWindowSize();
@@ -14,7 +14,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.header__card}>
         <h2>ЛЕГКИЕ КУРТКИ И ВЕТРОВКИ</h2>
-        <Link href='/'>Подробнее</Link>
+        <Link href="/">Подробнее</Link>
       </div>
     </header>
   );

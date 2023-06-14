@@ -1,8 +1,8 @@
-import { useWindowSize } from '@/hooks/useWindowSize';
-import Image from 'next/image';
+import { useWindowSize } from "@/hooks/useWindowSize";
+import Image from "next/image";
 
 const styles = {
-  marginTop: '16px',
+  marginTop: "16px",
 };
 
 const Banner = () => {
@@ -14,8 +14,8 @@ const Banner = () => {
         <>
           <h2>НОВАЯ КОЛЛЕКЦИЯ</h2>
           <Image
-            src='/static/media/banner_mobile.svg'
-            alt=''
+            src="/static/media/banner_mobile.svg"
+            alt=""
             fill
             style={styles}
           />
@@ -23,7 +23,7 @@ const Banner = () => {
       ) : (
         <>
           <h2>ПУХОВИКИ И ЗИМНИЕ КУРТКИ</h2>
-          <Image src='/static/media/banner.webp' alt='' fill style={styles} />
+          <Image src="/static/media/banner.webp" alt="" fill style={styles} />
         </>
       )}
     </section>

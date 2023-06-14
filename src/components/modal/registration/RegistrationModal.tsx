@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import styles from './RegistrationModal.module.scss';
+import { useState } from "react";
+import styles from "./RegistrationModal.module.scss";
 
-import { useForm, SubmitHandler } from 'react-hook-form';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Image from 'next/image';
+import { useForm, SubmitHandler } from "react-hook-form";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Image from "next/image";
 
-import { modalStyles } from '@/config/modal.config';
-import { useRegisterMutation } from '@/store/api/auth.api';
-import Button from '@/components/button/Button';
+import { modalStyles } from "@/config/modal.config";
+import { useRegisterMutation } from "@/store/api/auth.api";
+import Button from "@/components/button/Button";
 
 type Inputs = {
   phone: string;
@@ -35,16 +35,16 @@ const RegistrationModal = () => {
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby='modal-modal-title'
-        aria-describedby='modal-modal-description'
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyles}>
           <div className={styles.modal_header}>
             <h3>РЕГИСТРАЦИЯ</h3>
             <button onClick={handleClose}>
               <Image
-                src='/static/media/close.svg'
-                alt=''
+                src="/static/media/close.svg"
+                alt=""
                 width={16}
                 height={16}
               />
@@ -52,35 +52,35 @@ const RegistrationModal = () => {
           </div>
           <div className={styles.modal_footer}>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <label htmlFor='phone'>
+              <label htmlFor="phone">
                 Телефон
                 <input
-                  type='text'
-                  placeholder='+998 (xx) xxx xx xx'
-                  id='phone'
+                  type="text"
+                  placeholder="+998 (xx) xxx xx xx"
+                  id="phone"
                   required
-                  {...inputRegister('phone')}
+                  {...inputRegister("phone")}
                 />
               </label>
-              <label htmlFor='first_name'>
+              <label htmlFor="first_name">
                 Имя
                 <input
-                  type='text'
-                  id='first_name'
+                  type="text"
+                  id="first_name"
                   required
-                  {...inputRegister('first_name')}
+                  {...inputRegister("first_name")}
                 />
               </label>
-              <label htmlFor='last_name'>
+              <label htmlFor="last_name">
                 Фамилия
                 <input
-                  type='text'
-                  id='last_name'
+                  type="text"
+                  id="last_name"
                   required
-                  {...inputRegister('last_name')}
+                  {...inputRegister("last_name")}
                 />
               </label>
-              <Button isDark type='submit' withLoading={isLoading}>
+              <Button isDark type="submit" withLoading={isLoading}>
                 ОТПРАВИТЬ
               </Button>
             </form>

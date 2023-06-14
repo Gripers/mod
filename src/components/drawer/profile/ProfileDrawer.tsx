@@ -1,6 +1,6 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from "react";
 
-import { Drawer, Box } from '@mui/material';
+import { Drawer, Box } from "@mui/material";
 
 type ProfileDrawerProps = {
   open: boolean;
@@ -15,10 +15,10 @@ const styles = {
 const ProfileDrawer = ({ open, setOpen, children }: ProfileDrawerProps) => {
   return (
     <Drawer
-      anchor='right'
+      anchor="right"
       open={open}
       onClose={() => setOpen(false)}
-      PaperProps={{ sx: { width: '100%' } }}
+      PaperProps={{ sx: { width: "100%" } }}
     >
       <Box sx={styles}>{children}</Box>
     </Drawer>

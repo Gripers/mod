@@ -1,7 +1,7 @@
-import { Dispatch, SetStateAction } from 'react';
-import styles from './MainDrawer.module.scss';
+import { Dispatch, SetStateAction } from "react";
+import styles from "./MainDrawer.module.scss";
 
-import { Drawer, Box } from '@mui/material';
+import { Drawer, Box } from "@mui/material";
 
 type MainDrawerProps = {
   open: boolean;
@@ -15,14 +15,13 @@ const boxStyles = {
 const MainDrawer = ({ open, setOpen }: MainDrawerProps) => {
   return (
     <Drawer
-      anchor='left'
+      anchor="left"
       open={open}
       onClose={() => setOpen(false)}
-      PaperProps={{ sx: { width: '100%' } }}
+      PaperProps={{ sx: { width: "100%" } }}
     >
       <Box sx={boxStyles}>
-        <div className={styles.main__drawer}>
-        </div>
+        <div className={styles.main__drawer}></div>
       </Box>
     </Drawer>
   );

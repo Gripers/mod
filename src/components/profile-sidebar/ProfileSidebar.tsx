@@ -1,28 +1,28 @@
-import styles from './ProfileSidebar.module.scss';
+import styles from "./ProfileSidebar.module.scss";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 const ProfileSidebar = () => {
   return (
     <nav className={styles.profile__sidebar}>
       <ul>
         <li>
-          <Link href='/profile'>МОИ ДАННЫЕ</Link>
+          <Link href="/profile">МОИ ДАННЫЕ</Link>
         </li>
         <li>
-          <Link href='/profile/cards'>МОИ КАРТЫ</Link>
+          <Link href="/profile/cards">МОИ КАРТЫ</Link>
         </li>
         <li>
-          <Link href='/profile/orders'>МОИ ЗАКАЗЫ</Link>
+          <Link href="/profile/orders">МОИ ЗАКАЗЫ</Link>
         </li>
         <li>
-          <Link href='/profile/addresses'>МОИ АДРЕСА</Link>
+          <Link href="/profile/addresses">МОИ АДРЕСА</Link>
         </li>
         <li>
-          <Link href='/favorites'>ИЗБРАННЫЕ</Link>
+          <Link href="/favorites">ИЗБРАННЫЕ</Link>
         </li>
         <li>
-          <Link href='/profile/settings'>НАСТРОЙКИ</Link>
+          <Link href="/profile/settings">НАСТРОЙКИ</Link>
         </li>
       </ul>
     </nav>

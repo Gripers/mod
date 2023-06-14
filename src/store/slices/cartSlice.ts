@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-import { Product } from '@/types/product.type';
+import { Product } from "@/types/product.type";
 
 const initialState: Product[] = [];
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     addItem: (state, { payload }) => {

@@ -1,18 +1,18 @@
-import styles from '@/styles/Products.module.scss';
+import styles from "@/styles/Products.module.scss";
 
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import Link from 'next/link';
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import Link from "next/link";
 
-import { sneakersDB } from '@/db/sneakers.db';
-import Filter from '@/components/filter/Filter';
-import ProductItem from '@/components/item/product-item/ProductItem';
+import { sneakersDB } from "@/db/sneakers.db";
+import Filter from "@/components/filter/Filter";
+import ProductItem from "@/components/item/product-item/ProductItem";
 
 const ProductsPage = () => {
   return (
-    <section id='container' className={styles.products}>
+    <section id="container" className={styles.products}>
       <div className={styles.products__left}>
         <Accordion>
           <AccordionSummary>
@@ -36,7 +36,7 @@ const ProductsPage = () => {
         <div className={styles.products__right_banner}>
           <div className={styles.products__right__banner_card}>
             <h2>SIKSILS</h2>
-            <Link href='/'>ПОДРОБНЕЕ</Link>
+            <Link href="/">ПОДРОБНЕЕ</Link>
           </div>
         </div>
         <Filter />

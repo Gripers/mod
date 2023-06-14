@@ -1,6 +1,6 @@
-import styles from './Button.module.scss';
+import styles from "./Button.module.scss";
 
-import Spinner from '../spinner/Spinner';
+import Spinner from "../spinner/Spinner";
 
 type ButtonProps = {
   isDark?: boolean;

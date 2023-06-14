@@ -1,6 +1,6 @@
-import styles from './SectionLayout.module.scss';
+import styles from "./SectionLayout.module.scss";
 
-import GoBack from '@/components/goback/GoBack';
+import GoBack from "@/components/goback/GoBack";
 
 type SectionLayoutProps = { title: string };
 

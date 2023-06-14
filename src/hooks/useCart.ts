@@ -1,4 +1,4 @@
-import { useActions, useAppSelector } from './redux';
+import { useActions, useAppSelector } from "./redux";
 
 export const useCart = () => {
   const { addItem, removeItem, updateItemQuantity, emptyCart } = useActions();

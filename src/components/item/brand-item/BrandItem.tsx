@@ -1,14 +1,14 @@
-import styles from './BrandItem.module.scss';
+import styles from "./BrandItem.module.scss";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Brand } from '@/types/brand.type';
+import { Brand } from "@/types/brand.type";
 
 type BrandItemProps = { brand: Brand };
 
 const BrandItem = ({ brand }: BrandItemProps) => {
   return (
-    <Link href='/' className={styles.brand__item}>
+    <Link href="/" className={styles.brand__item}>
       <h2>{brand.name}</h2>
     </Link>
   );

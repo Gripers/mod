@@ -1,11 +1,11 @@
-import { useMemo } from 'react';
+import { useMemo } from "react";
 
-import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
-import { bindActionCreators } from '@reduxjs/toolkit';
+import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
+import { bindActionCreators } from "@reduxjs/toolkit";
 
-import { RootState } from '@/store/store';
-import { actions as cartActions } from '@/store/slices/cartSlice';
-import { actions as favoritesActions } from '@/store/slices/favoritesSlice';
+import { RootState } from "@/store/store";
+import { actions as cartActions } from "@/store/slices/cartSlice";
+import { actions as favoritesActions } from "@/store/slices/favoritesSlice";
 
 const actions = {
   ...cartActions,

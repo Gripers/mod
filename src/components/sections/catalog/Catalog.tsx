@@ -1,10 +1,10 @@
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
-import { catalogDB } from '@/db/catalog.db';
-import { carouselConfig } from '@/config/carousel.config';
-import CatalogItem from '@/components/item/catalog-item/CatalogItem';
+import { catalogDB } from "@/db/catalog.db";
+import { carouselConfig } from "@/config/carousel.config";
+import CatalogItem from "@/components/item/catalog-item/CatalogItem";
 
-const ReactOwlCarousel = dynamic(import('react-owl-carousel'), { ssr: false });
+const ReactOwlCarousel = dynamic(import("react-owl-carousel"), { ssr: false });
 
 const Catalog = () => {
   return (

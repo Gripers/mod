@@ -60,3 +60,36 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
+
+#global__loader {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  z-index: 99999;
+  background: #fff;
+}
+
+#body__overflow_hidden {
+  overflow: hidden;
+}
+
+#global__loader h1 {
+  font-size: 50px;
+  animation: show 1s infinite;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}

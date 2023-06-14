@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-import { Product } from '@/types/product.type';
+import { Product } from "@/types/product.type";
 
 const initialState: Product[] = [];
 
 const favoritesSlice = createSlice({
-  name: 'favorites',
+  name: "favorites",
   initialState,
   reducers: {
     addToFavorites: (state, { payload }) => {

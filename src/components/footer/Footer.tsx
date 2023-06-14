@@ -1,6 +1,6 @@
-import styles from './Footer.module.scss';
+import styles from "./Footer.module.scss";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -18,70 +18,70 @@ const Footer = () => {
             <ul>
               <li>ИНТЕРНЕТ МАГАЗИН</li>
               <li>
-                <Link href='/'>Центр поддержки Ason</Link>
+                <Link href="/">Центр поддержки Ason</Link>
               </li>
               <li>
-                <Link href='/'>Статус заказа по номеру</Link>
+                <Link href="/">Статус заказа по номеру</Link>
               </li>
               <li>
-                <Link href='/'>Оплата</Link>
+                <Link href="/">Оплата</Link>
               </li>
               <li>
-                <Link href='/'>Условия возврата</Link>
+                <Link href="/">Условия возврата</Link>
               </li>
               <li>
-                <Link href='/'>Условия доставки</Link>
+                <Link href="/">Условия доставки</Link>
               </li>
               <li>
-                <Link href='/'>Как выбрать размер</Link>
+                <Link href="/">Как выбрать размер</Link>
               </li>
               <li>
-                <Link href='/'>Как оформить заказ</Link>
+                <Link href="/">Как оформить заказ</Link>
               </li>
             </ul>
             <ul>
               <li>МАГАЗИНЫ</li>
               <li>
-                <Link href='/'>Центр поддержки Ason</Link>
+                <Link href="/">Центр поддержки Ason</Link>
               </li>
               <li>
-                <Link href='/'>Статус заказа по номеру</Link>
+                <Link href="/">Статус заказа по номеру</Link>
               </li>
               <li>
-                <Link href='/'>Оплата</Link>
+                <Link href="/">Оплата</Link>
               </li>
               <li>
-                <Link href='/'>Условия возврата</Link>
+                <Link href="/">Условия возврата</Link>
               </li>
             </ul>
             <ul>
               <li>МОЙ АККАУНТ</li>
               <li>
-                <Link href='/'>Мои карты</Link>
+                <Link href="/">Мои карты</Link>
               </li>
               <li>
-                <Link href='/'>Мои заказы</Link>
+                <Link href="/">Мои заказы</Link>
               </li>
               <li>
-                <Link href='/'>Мои адреса</Link>
+                <Link href="/">Мои адреса</Link>
               </li>
               <li>
-                <Link href='/'>Избранные</Link>
+                <Link href="/">Избранные</Link>
               </li>
             </ul>
             <ul>
               <li>УЗНАТЬ БОЛЬШЕ</li>
               <li>
-                <Link href='/'>Мои карты</Link>
+                <Link href="/">Мои карты</Link>
               </li>
               <li>
-                <Link href='/'>Мои заказы</Link>
+                <Link href="/">Мои заказы</Link>
               </li>
               <li>
-                <Link href='/'>Мои адреса</Link>
+                <Link href="/">Мои адреса</Link>
               </li>
               <li>
-                <Link href='/'>Избранные</Link>
+                <Link href="/">Избранные</Link>
               </li>
             </ul>
           </div>

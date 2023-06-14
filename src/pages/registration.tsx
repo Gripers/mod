@@ -1,12 +1,12 @@
-import styles from '@/styles/Login.module.scss';
+import styles from "@/styles/Login.module.scss";
 
-import SectionLayout from '@/components/layout/section/SectionLayout';
-import RegistrationModal from '@/components/modal/registration/RegistrationModal';
+import SectionLayout from "@/components/layout/section/SectionLayout";
+import RegistrationModal from "@/components/modal/registration/RegistrationModal";
 
 const RegistrationPage = () => {
   return (
-    <section id='container' className={styles.login}>
-      <SectionLayout title='РЕГИСТРАЦИЯ' />
+    <section id="container" className={styles.login}>
+      <SectionLayout title="РЕГИСТРАЦИЯ" />
       <div className={styles.login__content}>
         <div className={styles.login__content_card}>
           <p>ЗДРАВСТВУЙТЕ</p>

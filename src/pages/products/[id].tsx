@@ -1,12 +1,12 @@
-import styles from '@/styles/SingleProduct.module.scss';
+import styles from "@/styles/SingleProduct.module.scss";
 
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import { useRouter } from "next/router";
+import Image from "next/image";
 
-import { sneakersDB } from '@/db/sneakers.db';
-import { useCart } from '@/hooks/useCart';
-import GoBack from '@/components/goback/GoBack';
-import ToFav from '@/components/tofav/ToFav';
+import { sneakersDB } from "@/db/sneakers.db";
+import { useCart } from "@/hooks/useCart";
+import GoBack from "@/components/goback/GoBack";
+import ToFav from "@/components/tofav/ToFav";
 
 const SingleProductPage = () => {
   const { query } = useRouter();
@@ -15,11 +15,11 @@ const SingleProductPage = () => {
   const item = sneakersDB.find((i) => i.id === Number(query.id));
 
   return (
-    <section id='container' className={styles.single__product}>
+    <section id="container" className={styles.single__product}>
       <GoBack />
       <div className={styles.single__product_wrapper}>
         <div className={styles.single__product__wrapper_left}>
-          <Image src={item?.image!} alt='' fill />
+          <Image src={item?.image!} alt="" fill />
           <ToFav item={item!} />
         </div>
         <div className={styles.single__product__wrapper_right}>

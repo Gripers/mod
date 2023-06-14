@@ -1,11 +1,11 @@
-import styles from '@/styles/ProfileCards.module.scss';
+import styles from "@/styles/ProfileCards.module.scss";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import { useCCFormat } from '@/hooks/useCCFormat';
-import ProfileLayout from '@/components/layout/profile/ProfileLayout';
-import AddCardModal from '@/components/modal/add-card/AddCardModal';
-import ProfileDrawerHeader from '@/components/profile-drawer-header/ProfileDrawerHeader';
+import { useCCFormat } from "@/hooks/useCCFormat";
+import ProfileLayout from "@/components/layout/profile/ProfileLayout";
+import AddCardModal from "@/components/modal/add-card/AddCardModal";
+import ProfileDrawerHeader from "@/components/profile-drawer-header/ProfileDrawerHeader";
 
 const MyCardsPage = () => {
   const cards = [{ id: 1, num: 2313209129283015 }];
@@ -15,7 +15,7 @@ const MyCardsPage = () => {
       <div className={styles.profile__wrapper__right_content}>
         {cards.length ? (
           <div className={styles.profile__wrapper__right__content_wrapper}>
-            <ProfileDrawerHeader title='МОИ КАРТЫ' />
+            <ProfileDrawerHeader title="МОИ КАРТЫ" />
             <ul
               className={styles.profile__wrapper__right__content__wrapper_cards}
             >
@@ -31,8 +31,8 @@ const MyCardsPage = () => {
         ) : (
           <div className={styles.profile__wrapper__right__content_nothing}>
             <Image
-              src='/static/media/credit_card_big.svg'
-              alt=''
+              src="/static/media/credit_card_big.svg"
+              alt=""
               width={100}
               height={70}
             />

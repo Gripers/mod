@@ -1,4 +1,4 @@
-import { useActions, useAppSelector } from './redux';
+import { useActions, useAppSelector } from "./redux";
 
 export const useFavorites = () => {
   const { addToFavorites, removeFromFavorites } = useActions();

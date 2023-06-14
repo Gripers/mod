@@ -1,16 +1,16 @@
-import styles from '@/styles/Profile.module.scss';
+import styles from "@/styles/Profile.module.scss";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import Button from '@/components/button/Button';
-import ProfileLayout from '@/components/layout/profile/ProfileLayout';
-import ProfileDrawerHeader from '@/components/profile-drawer-header/ProfileDrawerHeader';
+import Button from "@/components/button/Button";
+import ProfileLayout from "@/components/layout/profile/ProfileLayout";
+import ProfileDrawerHeader from "@/components/profile-drawer-header/ProfileDrawerHeader";
 
 const ProfilePage = () => {
   return (
     <ProfileLayout>
       <div className={styles.profile__wrapper__right_content}>
-        <ProfileDrawerHeader title='МОИ ДАННЫЕ' />
+        <ProfileDrawerHeader title="МОИ ДАННЫЕ" />
         <b>Сохраняйте понравившиеся вам товары и проверяйте их наличие</b>
         <p>
           Из обзора учетной записи пользователя можно просматривать последние
@@ -19,47 +19,47 @@ const ProfilePage = () => {
           информацию.
         </p>
         <form>
-          <label htmlFor='name_surname'>
+          <label htmlFor="name_surname">
             ИМЯ И ФАМИЛИЯ
-            <input type='text' id='name_surname' />
+            <input type="text" id="name_surname" />
           </label>
-          <label htmlFor='gender'>
+          <label htmlFor="gender">
             ПОЛ
-            <input type='text' id='gender' />
+            <input type="text" id="gender" />
           </label>
-          <label htmlFor='phone'>
+          <label htmlFor="phone">
             ТЕЛЕФОН
-            <input type='number' id='phone' />
+            <input type="number" id="phone" />
           </label>
-          <label htmlFor='birthday'>
+          <label htmlFor="birthday">
             ИМЯ И ФАМИЛИЯ
-            <input type='date' id='birthday' />
+            <input type="date" id="birthday" />
           </label>
-          <label htmlFor='email'>
+          <label htmlFor="email">
             EMAIL
-            <input type='email' id='email' />
+            <input type="email" id="email" />
           </label>
-          <label htmlFor='city'>
+          <label htmlFor="city">
             ГОРОД
-            <input type='text' id='city' />
+            <input type="text" id="city" />
           </label>
           <div className={styles.profile__wrapper__right__content_avatar}>
             <Image
-              src='/static/media/avatar.jpg'
-              alt=''
+              src="/static/media/avatar.jpg"
+              alt=""
               width={100}
               height={100}
             />
             <div>
-              <label htmlFor='avatar'>
+              <label htmlFor="avatar">
                 ЗАГРУЗИТЬ ДРУГОЕ
-                <input type='file' id='avatar' />
+                <input type="file" id="avatar" />
               </label>
               <button>УДАЛИТЬ</button>
             </div>
           </div>
           <div className={styles.profile__wrapper__right__content_buttons}>
-            <Button isDark type='submit'>
+            <Button isDark type="submit">
               СОХРАНИТЬ
             </Button>
             <Button>ОТМЕНА</Button>

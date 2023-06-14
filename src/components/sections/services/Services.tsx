@@ -1,6 +1,6 @@
-import styles from './Services.module.scss';
+import styles from "./Services.module.scss";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 const Services = () => {
   return (
@@ -8,15 +8,15 @@ const Services = () => {
       <ul>
         <li>
           <div className={styles.services__icon}>
-            <Image src='/static/media/box.svg' alt='' width={20} height={20} />
+            <Image src="/static/media/box.svg" alt="" width={20} height={20} />
           </div>
           <p>100 000+ брендовых товаров</p>
         </li>
         <li>
           <div className={styles.services__icon}>
             <Image
-              src='/static/media/truck.svg'
-              alt=''
+              src="/static/media/truck.svg"
+              alt=""
               width={20}
               height={20}
             />
@@ -26,8 +26,8 @@ const Services = () => {
         <li>
           <div className={styles.services__icon}>
             <Image
-              src='/static/media/award.svg'
-              alt=''
+              src="/static/media/award.svg"
+              alt=""
               width={20}
               height={20}
             />
@@ -37,8 +37,8 @@ const Services = () => {
         <li>
           <div className={styles.services__icon}>
             <Image
-              src='/static/media/credit_card.svg'
-              alt=''
+              src="/static/media/credit_card.svg"
+              alt=""
               width={20}
               height={20}
             />

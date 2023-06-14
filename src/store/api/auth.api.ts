@@ -1,4 +1,4 @@
-import { rootApi } from '../api';
+import { rootApi } from "../api";
 
 const authApi = rootApi.injectEndpoints({
   endpoints: (build) => ({
@@ -7,22 +7,22 @@ const authApi = rootApi.injectEndpoints({
       { phone: string; first_name: string; last_name: string }
     >({
       query: (payload) => ({
-        url: '/otp/register',
-        method: 'POST',
+        url: "/otp/register",
+        method: "POST",
         body: payload,
       }),
     }),
     login: build.mutation<null, { phone: string }>({
       query: (payload) => ({
-        url: '/otp/login',
-        method: 'POST',
+        url: "/otp/login",
+        method: "POST",
         body: payload,
       }),
     }),
     confirm: build.mutation<null, { phone: string; code: number }>({
       query: (payload) => ({
-        url: '/otp/confirm',
-        method: 'POST',
+        url: "/otp/confirm",
+        method: "POST",
         body: payload,
       }),
     }),

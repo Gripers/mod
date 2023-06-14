@@ -1,14 +1,14 @@
-import { useContext } from 'react';
-import styles from './ConfirmModal.module.scss';
+import { useContext } from "react";
+import styles from "./ConfirmModal.module.scss";
 
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { Box, Modal } from '@mui/material';
-import Image from 'next/image';
+import { useForm, SubmitHandler } from "react-hook-form";
+import { Box, Modal } from "@mui/material";
+import Image from "next/image";
 
-import { modalStyles } from '@/config/modal.config';
-import { useConfirmMutation } from '@/store/api/auth.api';
-import { ModalContext } from '@/context/ModalContext';
-import Button from '@/components/button/Button';
+import { modalStyles } from "@/config/modal.config";
+import { useConfirmMutation } from "@/store/api/auth.api";
+import { ModalContext } from "@/context/ModalContext";
+import Button from "@/components/button/Button";
 
 type Inputs = {
   phone: string;
@@ -29,16 +29,16 @@ const ConfirmModal = () => {
     <Modal
       open={open}
       onClose={handleClose}
-      aria-labelledby='modal-modal-title'
-      aria-describedby='modal-modal-description'
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
     >
       <Box sx={modalStyles}>
         <div className={styles.modal_header}>
           <h3>ВХОД</h3>
           <button onClick={handleClose}>
             <Image
-              src='/static/media/close.svg'
-              alt=''
+              src="/static/media/close.svg"
+              alt=""
               width={16}
               height={16}
             />
@@ -46,28 +46,28 @@ const ConfirmModal = () => {
         </div>
         <div className={styles.modal_footer}>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor='phone'>
+            <label htmlFor="phone">
               Телефон
               <input
-                type='string'
-                placeholder='+998 (xx) xxx xx xx'
-                id='phone'
+                type="string"
+                placeholder="+998 (xx) xxx xx xx"
+                id="phone"
                 required
-                {...register('phone')}
+                {...register("phone")}
               />
             </label>
-            <label htmlFor='code'>
+            <label htmlFor="code">
               Код
               <input
-                type='number'
-                placeholder='xxxx'
-                id='code'
+                type="number"
+                placeholder="xxxx"
+                id="code"
                 required
-                {...register('code')}
+                {...register("code")}
               />
             </label>
             <p>Введите код подтверждения</p>
-            <Button isDark type='submit' withLoading={isLoading}>
+            <Button isDark type="submit" withLoading={isLoading}>
               ОТПРАВИТЬ
             </Button>
           </form>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '@/styles/globals.scss';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -10,12 +10,21 @@ import NextNProgress from 'nextjs-progressbar';
 
 import { DrawerContext } from '@/context/DrawerContext';
 import { persistor, store } from '@/store/store';
-import Layout from '@/components/layout/layout';
 import { ModalContext } from '@/context/ModalContext';
+import Layout from '@/components/layout/layout';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
+
+  useEffect(() => {
+    const loader = document.getElementById('global__loader');
+    if (loader)
+      setTimeout(() => {
+        loader.style.display = 'none';
+        document.body.removeAttribute('id');
+      }, 2000);
+  }, []);
 
   return (
     <Provider store={store}>
